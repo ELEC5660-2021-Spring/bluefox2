@@ -5,8 +5,7 @@
 #include <camera_base/camera_node_base.h>
 #include <ros/ros.h>
 
-static ros::Time shutter_stamp_last;
-static bool use_sync = true;
+extern ros::Time shutter_stamp_last;
 
 namespace bluefox2 {
 

@@ -10,12 +10,16 @@ Bluefox2Ros::Bluefox2Ros(const ros::NodeHandle& nh, const std::string& prefix)
   // Some hack for getting hardware sync to work
   ros::NodeHandle cnh(nh, prefix);
   std::string mode;
-  cnh.param<std::string>("mode", mode, "");
+  nh.param<std::string>("mode", mode, "");
 
   if (mode == "master") {
+    ROS_INFO("Use master mode");
     bluefox2_.SetMaster();
   } else if (mode == "slave") {
     bluefox2_.SetSlave();
+    ROS_INFO("Use slave mode");
+  } else {
+    ROS_INFO("Use non %s mode", mode.c_str());
   }
 
   // Set mirror mode on construction
