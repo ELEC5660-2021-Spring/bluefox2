@@ -50,6 +50,7 @@
         <param name="wbp" type="int" value="$(arg wbp)"/>
         <param name="request" type="int" value="$(arg request)"/>
         <param name="mm" type="int" value="$(arg mm)"/>
+        <param name="mode" type="string" value="master"/>
         <param name="image_raw/compressed/jpeg_quality" type="int" value="$(arg jpeg_quality)"/>
     <remap from="$(arg camera_name)/image_raw" to="/camera/image_raw" />
     </node>
